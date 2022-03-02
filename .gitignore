@@ -1,7 +1,6 @@
 ### Matol Parser ###
-db.csv
-HallOfFame.csv
-hof.htmlcov
+*.csv
+hof.html
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
