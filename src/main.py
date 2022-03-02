@@ -17,7 +17,6 @@ def main():
 
     hof = Hof(data['all_results'], data['hof'])
     hof.run()
-
     print('Results processed')
 
     file = pd.read_csv(data['hof'])
