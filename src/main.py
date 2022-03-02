@@ -20,7 +20,7 @@ def main():
     print('Results processed')
 
     file = pd.read_csv(data['hof'])
-    file.to_html(data['web'])
+    file.to_html(data['web'], index=False, classes='table table-hover')
     print('Web Page Generated')
 
 
