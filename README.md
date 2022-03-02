@@ -15,6 +15,7 @@ You can check the live version of the resulting webpage [here](https://daniyarda
 ## Usage
 
 ```bash
+cd src
 pip install requirements.txt
 python main.py
 ```
@@ -22,6 +23,7 @@ python main.py
 or
 
 ```bash
+cd src
 pip3 install requirements.txt
 python3 main.py
 ```
