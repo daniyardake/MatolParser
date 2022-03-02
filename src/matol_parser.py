@@ -69,8 +69,9 @@ class MatolParser:
                 award = self.clean_award(result[-1])
                 score = result[-2]
                 year = year_grade[0]
+                region = result[2] if (int(year) != 2020) else result[3]
                 grade = year_grade[1]
-                csvwriter.writerow([year, grade, name, score, award])
+                csvwriter.writerow([year, grade, name, score, award, region])
 
     def run(self, db):
         for link in self.links:

@@ -15,7 +15,7 @@ class Hof:
         with open('db.csv', 'r') as f:
             reader = csv.reader(f)
             for row in reader:
-                year, grade, name, score, award = row
+                year, grade, name, score, award, region = row
                 if (name not in results.keys()):
                     for existing_name in results.keys():
                         if (self.similar(name, existing_name)):
@@ -23,7 +23,8 @@ class Hof:
                 if (name not in results.keys()):
                     results[name] = {
                         'perfomance': [0, 0, 0, 0],
-                        'competitions': []
+                        'competitions': [],
+                        'region': region
                     }
                 if (award == '1'):
                     results[name]['perfomance'][0] += 1
@@ -53,7 +54,7 @@ class Hof:
         with open(out, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(
-                ['Rank', 'Name', 'Years', 'Gold', 'Silver', 'Bronze', 'None', 'Total'])
+                ['Rank', 'Name', 'Region/School', 'Years', 'Gold', 'Silver', 'Bronze', 'None', 'Total'])
             sorted_tuples = sorted(
                 results.items(), key=lambda x: x[1]['perfomance'], reverse=True)
             sorted_results = {k: v for k, v in sorted_tuples}
@@ -64,6 +65,7 @@ class Hof:
             for i, (name, data) in enumerate(sorted_results.items(), 1):
                 to_write = [
                     name,
+                    data['region'],
                     self.competitions_range(data),
                     data['perfomance'][0],
                     data['perfomance'][1],
