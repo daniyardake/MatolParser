@@ -2,7 +2,7 @@
 
 ## Hall Of Fame for 2010-2022
 
-This repository creates a script that parses the [website](http://maatol.kz/) to get results of the Kazakhstan National Math Olympiad and sort them
+This repository creates a script that parses the [website](http://matol.kz/) to get results of the Kazakhstan National Math Olympiad and sort them
 
 ## Live view
 
